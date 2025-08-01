@@ -36,7 +36,7 @@ from ISTKHAR_MUSIC.utils.database import (
 )
 from ISTKHAR_MUSIC.utils.exceptions import AssistantErr
 from ISTKHAR_MUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
-from ISTKHAR_MUSIC.utils.inline.play import stream_markup, stream_markup2
+from ISTKHAR_MUSIC.utils.inline.play import stream_markup
 from ISTKHAR_MUSIC.utils.stream.autoclear import auto_clean
 from ISTKHAR_MUSIC.utils.thumbnails import get_thumb
 from strings import get_string
