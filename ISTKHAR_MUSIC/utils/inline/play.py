@@ -1,5 +1,5 @@
 import math
-from config import SUPPORT_CHAT, OWNER_USERNAME
+import random
 from pyrogram.types import InlineKeyboardButton
 from ISTKHAR_MUSIC import app
 import config
@@ -34,25 +34,25 @@ def stream_markup_timer(_, chat_id, played, dur):
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
     if 0 < umm <= 10:
-        bar = "◉—————————"
+        bar = "✄·─·─·─·─·─·─·─·─·─"
     elif 10 < umm < 20:
-        bar = "—◉————————"
+        bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
     elif 20 <= umm < 30:
-        bar = "——◉———————"
+        bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
     elif 30 <= umm < 40:
-        bar = "———◉——————"
+        bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
     elif 40 <= umm < 50:
-        bar = "————◉—————"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
     elif 50 <= umm < 60:
-        bar = "—————◉————"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
     elif 60 <= umm < 70:
-        bar = "——————◉———"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
     elif 70 <= umm < 80:
-        bar = "———————◉——"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
     elif 80 <= umm < 95:
-        bar = "————————◉—"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
     else:
-        bar = "—————————◉"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
     buttons = [
                 [
             InlineKeyboardButton(
@@ -60,12 +60,13 @@ def stream_markup_timer(_, chat_id, played, dur):
                 callback_data="GetTimer",
             )
         ],
-		[
+                [
          InlineKeyboardButton(text=_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true",)
         ],
         [
-         InlineKeyboardButton(text="• ᴏᴡɴᴇʀ •", url="https://t.me/RAM_HACKER_RP"),
-         InlineKeyboardButton(text="• ɢʀᴏᴜᴘ •", url="https://t.me/+ZInYo4WtbRU0NzU1"),
+         #InlineKeyboardButton(text="Update", url="https://t.me/Jani_RP"),
+         #InlineKeyboardButton(text="Owner", url="http://t.me/Jani_RP_Lover"),
+        # InlineKeyboardButton(text=" Support Chat ", url="https://t.me/+AaI_GATiYwQ5NjU1"),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
@@ -75,8 +76,9 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
-         InlineKeyboardButton(text="• ᴏᴡɴᴇʀ •", url="https://t.me/RAM_HACKER_RP"),
-         InlineKeyboardButton(text="• ɢʀᴏᴜᴘ •", url="https://t.me/+ZInYo4WtbRU0NzU1"),
+        # InlineKeyboardButton(text="Update", url="https://t.me/Jani_RP"),
+       #  InlineKeyboardButton(text="Owner", url="http://t.me/Jani_RP_Lover"),
+        # InlineKeyboardButton(text=" Support Chat ", url="https://t.me/+AaI_GATiYwQ5NjU1"),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
@@ -103,7 +105,7 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         ],
     ]
     return buttons
-                
+
 
 
 def livestream_markup(_, videoid, user_id, mode, channel, fplay):
@@ -153,4 +155,4 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
         ],
     ]
     return buttons
-    
+            
